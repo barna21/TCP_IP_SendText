@@ -20,13 +20,18 @@ namespace TCP_IP_SendText
         }
 
         SimpleTcpServer server;
+        SimpleTcpClient client;
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SimpleTcpServer server = new SimpleTcpServer();
+            server = new SimpleTcpServer();
             server.Delimiter = 0x13;
             server.StringEncoder = Encoding.UTF8;
             server.DataReceived += ServerDataReceved;
+
+            client = new SimpleTcpClient();
+            client.StringEncoder = Encoding.UTF8;
+            client.DataReceived += Client_DataReceived;
         }
 
         private void ServerDataReceved(object sender, SimpleTCP.Message e)
@@ -38,11 +43,16 @@ namespace TCP_IP_SendText
             });
         }
 
+        private void Client_DataReceived(object sender, SimpleTCP.Message e)
+        {
+
+        }
+
         private void btnStartServer_Click(object sender, EventArgs e)
         {
             txtBoxStatus.Text += "Server starting...";
             System.Net.IPAddress ipServer = new System.Net.IPAddress(long.Parse(txtBoxHostIP.Text));
-            server.Start(ipServer, Convert.ToInt32(txtBoxHostPort.Text));
+            server.Start(Convert.ToInt32(txtBoxHostPort.Text), false);
         }
 
         private void btnStopServer_Click(object sender, EventArgs e)
@@ -51,6 +61,11 @@ namespace TCP_IP_SendText
             {
                 server.Stop();
             }
+        }
+
+        private void txtBoxClientSend_Click(object sender, EventArgs e)
+        {
+            client.WriteLineAndGetReply(txtBoxMessage.Text, TimeSpan.FromSeconds(3));
         }
     }
 }

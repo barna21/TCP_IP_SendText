@@ -110,6 +110,7 @@
             this.txtBoxHostIP.Name = "txtBoxHostIP";
             this.txtBoxHostIP.Size = new System.Drawing.Size(178, 20);
             this.txtBoxHostIP.TabIndex = 1;
+            this.txtBoxHostIP.Text = "127.0.0.1";
             // 
             // txtBoxHostPort
             // 
@@ -117,6 +118,7 @@
             this.txtBoxHostPort.Name = "txtBoxHostPort";
             this.txtBoxHostPort.Size = new System.Drawing.Size(117, 20);
             this.txtBoxHostPort.TabIndex = 3;
+            this.txtBoxHostPort.Text = "8910";
             // 
             // label2
             // 
@@ -170,6 +172,7 @@
             this.txtBoxServerPort.Name = "txtBoxServerPort";
             this.txtBoxServerPort.Size = new System.Drawing.Size(117, 20);
             this.txtBoxServerPort.TabIndex = 8;
+            this.txtBoxServerPort.Text = "8910";
             // 
             // label3
             // 
@@ -186,6 +189,7 @@
             this.txtBoxServerIP.Name = "txtBoxServerIP";
             this.txtBoxServerIP.Size = new System.Drawing.Size(178, 20);
             this.txtBoxServerIP.TabIndex = 6;
+            this.txtBoxServerIP.Text = "127.0.0.1";
             // 
             // label4
             // 
@@ -212,6 +216,7 @@
             this.txtBoxClientSend.TabIndex = 11;
             this.txtBoxClientSend.Text = "Send";
             this.txtBoxClientSend.UseVisualStyleBackColor = true;
+            this.txtBoxClientSend.Click += new System.EventHandler(this.txtBoxClientSend_Click);
             // 
             // Form1
             // 

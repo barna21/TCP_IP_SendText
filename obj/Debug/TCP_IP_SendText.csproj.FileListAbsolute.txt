@@ -1,0 +1,10 @@
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\TCP_IP_SendText.exe.config
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\TCP_IP_SendText.exe
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\TCP_IP_SendText.pdb
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.csprojAssemblyReference.cache
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.Form1.resources
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.Properties.Resources.resources
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.csproj.GenerateResource.cache
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.csproj.CoreCompileInputs.cache
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.exe
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.pdb

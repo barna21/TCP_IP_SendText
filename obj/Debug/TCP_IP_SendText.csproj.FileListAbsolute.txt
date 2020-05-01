@@ -8,3 +8,13 @@ C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_S
 C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.csproj.CoreCompileInputs.cache
 C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.exe
 C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.pdb
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\SimpleTCP.dll
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Buffers.dll
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Memory.dll
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Buffers.xml
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Memory.xml
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Barni\Desktop\GitHub\TCP_IP_SendText\TCP_IP_SendText\obj\Debug\TCP_IP_SendText.csproj.CopyComplete

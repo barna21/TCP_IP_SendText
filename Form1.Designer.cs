@@ -30,21 +30,23 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBoxHostIP = new System.Windows.Forms.TextBox();
+            this.txtBoxStatus = new System.Windows.Forms.TextBox();
+            this.btnStopServer = new System.Windows.Forms.Button();
+            this.btnStartServer = new System.Windows.Forms.Button();
             this.txtBoxHostPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnStartServer = new System.Windows.Forms.Button();
-            this.btnStopServer = new System.Windows.Forms.Button();
-            this.txtBoxStatus = new System.Windows.Forms.TextBox();
+            this.txtBoxHostIP = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtBoxClientSend = new System.Windows.Forms.Button();
+            this.txtBoxMessage = new System.Windows.Forms.TextBox();
             this.btnClientConnect = new System.Windows.Forms.Button();
             this.txtBoxServerPort = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxServerIP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtBoxMessage = new System.Windows.Forms.TextBox();
-            this.txtBoxClientSend = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,39 +80,33 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Server";
             // 
-            // tabPage2
+            // txtBoxStatus
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage2.Controls.Add(this.txtBoxClientSend);
-            this.tabPage2.Controls.Add(this.txtBoxMessage);
-            this.tabPage2.Controls.Add(this.btnClientConnect);
-            this.tabPage2.Controls.Add(this.txtBoxServerPort);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.txtBoxServerIP);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(623, 255);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Client";
+            this.txtBoxStatus.Location = new System.Drawing.Point(60, 44);
+            this.txtBoxStatus.Multiline = true;
+            this.txtBoxStatus.Name = "txtBoxStatus";
+            this.txtBoxStatus.Size = new System.Drawing.Size(555, 201);
+            this.txtBoxStatus.TabIndex = 6;
             // 
-            // label1
+            // btnStopServer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Server:";
+            this.btnStopServer.Location = new System.Drawing.Point(522, 15);
+            this.btnStopServer.Name = "btnStopServer";
+            this.btnStopServer.Size = new System.Drawing.Size(93, 23);
+            this.btnStopServer.TabIndex = 5;
+            this.btnStopServer.Text = "Stop SERVER";
+            this.btnStopServer.UseVisualStyleBackColor = true;
+            this.btnStopServer.Click += new System.EventHandler(this.btnStopServer_Click);
             // 
-            // txtBoxHostIP
+            // btnStartServer
             // 
-            this.txtBoxHostIP.Location = new System.Drawing.Point(60, 18);
-            this.txtBoxHostIP.Name = "txtBoxHostIP";
-            this.txtBoxHostIP.Size = new System.Drawing.Size(178, 20);
-            this.txtBoxHostIP.TabIndex = 1;
-            this.txtBoxHostIP.Text = "127.0.0.1";
+            this.btnStartServer.Location = new System.Drawing.Point(423, 16);
+            this.btnStartServer.Name = "btnStartServer";
+            this.btnStartServer.Size = new System.Drawing.Size(93, 23);
+            this.btnStartServer.TabIndex = 4;
+            this.btnStartServer.Text = "Start SERVER";
+            this.btnStartServer.UseVisualStyleBackColor = true;
+            this.btnStartServer.Click += new System.EventHandler(this.btnStartServer_Click);
             // 
             // txtBoxHostPort
             // 
@@ -129,33 +125,57 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Port:";
             // 
-            // btnStartServer
+            // txtBoxHostIP
             // 
-            this.btnStartServer.Location = new System.Drawing.Point(423, 16);
-            this.btnStartServer.Name = "btnStartServer";
-            this.btnStartServer.Size = new System.Drawing.Size(93, 23);
-            this.btnStartServer.TabIndex = 4;
-            this.btnStartServer.Text = "Start SERVER";
-            this.btnStartServer.UseVisualStyleBackColor = true;
-            this.btnStartServer.Click += new System.EventHandler(this.btnStartServer_Click);
+            this.txtBoxHostIP.Location = new System.Drawing.Point(60, 18);
+            this.txtBoxHostIP.Name = "txtBoxHostIP";
+            this.txtBoxHostIP.Size = new System.Drawing.Size(178, 20);
+            this.txtBoxHostIP.TabIndex = 1;
+            this.txtBoxHostIP.Text = "127.0.0.1";
             // 
-            // btnStopServer
+            // label1
             // 
-            this.btnStopServer.Location = new System.Drawing.Point(522, 15);
-            this.btnStopServer.Name = "btnStopServer";
-            this.btnStopServer.Size = new System.Drawing.Size(93, 23);
-            this.btnStopServer.TabIndex = 5;
-            this.btnStopServer.Text = "Stop SERVER";
-            this.btnStopServer.UseVisualStyleBackColor = true;
-            this.btnStopServer.Click += new System.EventHandler(this.btnStopServer_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Server:";
             // 
-            // txtBoxStatus
+            // tabPage2
             // 
-            this.txtBoxStatus.Location = new System.Drawing.Point(60, 44);
-            this.txtBoxStatus.Multiline = true;
-            this.txtBoxStatus.Name = "txtBoxStatus";
-            this.txtBoxStatus.Size = new System.Drawing.Size(555, 201);
-            this.txtBoxStatus.TabIndex = 6;
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage2.Controls.Add(this.txtBoxClientSend);
+            this.tabPage2.Controls.Add(this.txtBoxMessage);
+            this.tabPage2.Controls.Add(this.btnClientConnect);
+            this.tabPage2.Controls.Add(this.txtBoxServerPort);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.txtBoxServerIP);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(623, 255);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Client";
+            // 
+            // txtBoxClientSend
+            // 
+            this.txtBoxClientSend.Location = new System.Drawing.Point(438, 198);
+            this.txtBoxClientSend.Name = "txtBoxClientSend";
+            this.txtBoxClientSend.Size = new System.Drawing.Size(93, 23);
+            this.txtBoxClientSend.TabIndex = 11;
+            this.txtBoxClientSend.Text = "Send";
+            this.txtBoxClientSend.UseVisualStyleBackColor = true;
+            this.txtBoxClientSend.Click += new System.EventHandler(this.txtBoxClientSend_Click);
+            // 
+            // txtBoxMessage
+            // 
+            this.txtBoxMessage.Location = new System.Drawing.Point(75, 32);
+            this.txtBoxMessage.Multiline = true;
+            this.txtBoxMessage.Name = "txtBoxMessage";
+            this.txtBoxMessage.Size = new System.Drawing.Size(456, 160);
+            this.txtBoxMessage.TabIndex = 10;
             // 
             // btnClientConnect
             // 
@@ -165,6 +185,7 @@
             this.btnClientConnect.TabIndex = 9;
             this.btnClientConnect.Text = "Connect";
             this.btnClientConnect.UseVisualStyleBackColor = true;
+            this.btnClientConnect.Click += new System.EventHandler(this.btnClientConnect_Click);
             // 
             // txtBoxServerPort
             // 
@@ -199,24 +220,6 @@
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Connect to:";
-            // 
-            // txtBoxMessage
-            // 
-            this.txtBoxMessage.Location = new System.Drawing.Point(75, 32);
-            this.txtBoxMessage.Multiline = true;
-            this.txtBoxMessage.Name = "txtBoxMessage";
-            this.txtBoxMessage.Size = new System.Drawing.Size(456, 160);
-            this.txtBoxMessage.TabIndex = 10;
-            // 
-            // txtBoxClientSend
-            // 
-            this.txtBoxClientSend.Location = new System.Drawing.Point(438, 198);
-            this.txtBoxClientSend.Name = "txtBoxClientSend";
-            this.txtBoxClientSend.Size = new System.Drawing.Size(93, 23);
-            this.txtBoxClientSend.TabIndex = 11;
-            this.txtBoxClientSend.Text = "Send";
-            this.txtBoxClientSend.UseVisualStyleBackColor = true;
-            this.txtBoxClientSend.Click += new System.EventHandler(this.txtBoxClientSend_Click);
             // 
             // Form1
             // 
@@ -256,6 +259,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxServerIP;
         private System.Windows.Forms.Label label4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
 

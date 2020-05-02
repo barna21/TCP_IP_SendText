@@ -11,6 +11,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using SimpleTCP;
+using HipChat;
 
 namespace TCP_IP_SendText
 {
@@ -67,6 +68,17 @@ namespace TCP_IP_SendText
 
         private void btnStartServer_Click(object sender, EventArgs e)
         {
+            TcpListener listener = new TcpListener(IPAddress.Any, int.Parse(txtBoxHostPort.Text));
+            listener.Start();
+            client = listener.AcceptTcpClient();
+            STR = new StreamReader(client.GetStream());
+            STW = new StreamWriter(client.GetStream());
+            STW.AutoFlush = true;
+
+            //backgroundworker...
+
+
+
             //txtBoxStatus.Text += "Server starting...";
             //System.Net.IPAddress ipServer = new System.Net.IPAddress(long.Parse(txtBoxHostIP.Text));
             //server.Start(Convert.ToInt32(txtBoxHostPort.Text), false);
@@ -83,6 +95,28 @@ namespace TCP_IP_SendText
         private void txtBoxClientSend_Click(object sender, EventArgs e)
         {
             //client.WriteLineAndGetReply(txtBoxMessage.Text, TimeSpan.FromSeconds(3));
+        }
+
+        private void btnClientConnect_Click(object sender, EventArgs e)
+        {
+            client = new TcpClient();
+            IPEndPoint IpEnd = new IPEndPoint(IPAddress.Parse(txtBoxServerIP.Text), int.Parse(txtBoxServerPort.Text));
+
+            try
+            {
+                client.Connect(IpEnd);
+                if(client.Connected)
+                {
+                    txtBoxMessage.AppendText("Conected");
+                    STR = new StreamReader(client.GetStream());
+                    STW = new StreamWriter(client.GetStream());
+                    STW.AutoFlush = true;
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }
